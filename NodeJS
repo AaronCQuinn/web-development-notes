@@ -1,0 +1,24 @@
+What is Node.js?
+A runtime environment used to run Javascript outside of the browser, typically used as a backend solution.
+
+Why use Node over other backends?
+1 - No new threads, runs in a single process.
+    Async operations allow for Node to perform I/O actions (databasing, filesystem access), by sending an inital request and then resuming the process when the response is received. This allows for Node to continue executing subsequent Javascript during the time spent waiting for a response, without blocking the main thread.
+2 - Allows for Javascript on both the front and back end.
+3 - Large ecosystem of open source packages.
+
+What are some important globals included in Node?
+1 - __dirname: Path to the current directory.
+2 - __filename: Path to the current file.
+3 - require: Allows the ability to import information that is exported from other files, into the current file.
+4 - module: Object showing all properties of a file.
+    -> Exports Object: Allows to define what information is encapsulated, and what information is allowed to be accessed by other files.
+    -> By default, all files in a node directory are a commonJS module.
+5 - process: Provides information about, and control over, the current Node.js process.
+
+What are some built-in modules included in Node?
+1 - OS Module: Information from the system running the compiled Node.
+2 - Path Module: Functionality for accessing file paths within Node, and the OS running it.
+3 - fs Module: Functionality for accessing and interacting with the file system.
+4 - http Module: Nodes built in http server.
+

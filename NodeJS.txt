@@ -1,3 +1,0 @@
-What is Node.js?
-
-A runtime environment used to run Javascript outside of the browser, typically used as a backend solution.
