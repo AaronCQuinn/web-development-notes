@@ -1,0 +1,33 @@
+What is a callback?
+A callback is a function passed to another function as an argument. Often used in asyncronous style programming, a callback can provide instructions on how to proceed after an I/O operation has concluded.
+
+Example callback: 
+
+    function addPost(post, callback) {
+        mongoose.create(example)
+        callback();
+    }
+
+What is a promise?
+Much like a real life promise, in Javascript a promise is a set of instructions that can either be resolved correctly, or be rejected due to some sort of error checking. Promises enable the .then and .catch syntax so that, much like a callback, a set of instructions can be executed on how to proceed after an I/O operation has occured.
+
+Example promise: 
+
+    function example() {
+        return new Promise((resolve, reject) => {
+            const resolved = true;
+            if (resolved) {
+                resolve();
+            } else {
+                reject();
+            }
+        });
+    }
+
+    example()
+        .then( A set of instructoins on how to proceed )
+        .catch(error => console.error(error))
+
+The JavaScript Event Loop (V8 Chrome Engine)
+The Javascript event loop operates initially by having a call stack, meaning it processes JavaScript in a top-to-bottom fashion on a single thread. Web APIs handled by the V8 engine allow the offloading of call stack blocking actions (such as I/O). When these time consuming actions resolve, they are placed into what is known as the callback queue. Once the call stack is empty of operations, the call stack then starts resolving the callbacks related to those offloaded events in order they are placed in the callback queue.
+    Link to a good explanation: https://youtu.be/8aGhZQkoFbQ?t=770
