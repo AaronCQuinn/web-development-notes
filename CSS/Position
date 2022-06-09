@@ -1,0 +1,16 @@
+Static:
+The default position all your elements will have when they enter the document. Static positioning follows the natural flow of your document, placing the content one after another, top to bottom.
+
+Relative:
+Acts the same as static positioning, but allows access to: top, bottom, left, and right attributes. Allowing the ability to change the position of the element, relative to where it normally would be in the document flow.
+Most common use case for position relative: Applying it to a parent element so that absolutely positioned elements consider the parent elements position in the document.
+
+Absolute:
+The element is treated as it's position in the document deleted. Position absolute removes the element from the document flow, and renders everything else as if it never existed. Allows for the access to top, left, right, and bottom as well. 
+By default, editing any of these attributes will absolutely position the element based on the next parent tag with an applicable position element, or the body tag of the entire document. However, an element can be absolutely positioned based on a parent elements position by making the parent elements position either: relative, absolute, sticky, or fixed. This will not work with the default static property.
+
+Fixed:
+The element completely ignores all other elements, and is positioned based on the body element. The unique property of fixed elements is that they will persist in the same place even while scrolling the page.
+
+Sticky:
+By default, acts the same as a relatively positioned element but acts as a fixed element once scrolled outside of it's default placement.

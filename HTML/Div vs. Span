@@ -1,0 +1,5 @@
+What is a Div?
+A div is generic tag used in HTML, used to group other elements. By default, a div is a block element. This means that the div of content will start on a new line, and anything that comes after it will also start on a new line. Therefore, by default, a div takes up the entire width.
+
+What is a Span?
+A span, much like a div, is a generic tag used in HTML. The difference being that a span by default is an inline element, meaning it does not cause line breaks before and after it's placement in the document.

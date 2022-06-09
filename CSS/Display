@@ -1,0 +1,13 @@
+Block:
+The element by default will take up the entire width given to it, it will force a new line above and below it.
+
+Inline:
+The element by default takes up the minimum space possible to fit all the content inside of it. In contrast to block, they will not force new lines above and below it. It will not break the natural flow and will share a line with other content.
+
+Inline-block:
+Exactly the same as an inline element, but allows for the width and height property to be applied to it. 
+
+None:
+The document will organize the rest of the page as if the element with this property never existed.
+
+Others that require more explanation: Flex, Grid.
