@@ -1,0 +1,9 @@
+What is the concept of "Serverless"?
+Serverless things still run on servers. The concept of serverless means only a very small portion of the server is used to carry out the specific operation.
+Essentially, a server on demand in very small increments of time (mostly a couple seconds at a time maximum).
+
+What are the benefits of using serverless architecture?
+1. Flexibility: Generally easier to build serverless functions.
+2. Scalability: Can seemlessly scale up and down to serve application size.
+3. Quicker time to market: Development environments are easier to set up which results in quicker delivery and rapid deployment.
+4. Reduced cost: Removes the need for hardware or software to maintain. Typically only pay for the operations you run, reads, writes and storage.
