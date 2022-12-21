@@ -1,0 +1,43 @@
+Instead of using a useEffect hook to check for authentication on every page, you can create a component which wraps the routes you want protected. If the authentication clause comes back as true, the child that is wrapped in the authenication component is rendered, if not you can redirect to whichever page desired.
+
+Example
+
+Wrapper Component
+AUTH_ENDPOINT = '/api/user_authentication';  
+const checkLoginStatus = async () => {
+    await axios({
+      method: "get",
+      url: AUTH_ENDPOINT
+    })
+    .then(response => {
+      return response.data;
+    })
+}
+
+export default function RequireAuth({ children }) {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    useEffect(() => {
+        setIsAuthenticated(checkLoginStatus());
+    },[])
+
+    if (!isAuthenticated) {
+        return <Navigate to='/login' />
+    } else {
+        return children;
+    }
+}
+
+Example Routing
+function App() {
+  return (
+    <Routes>
+      <Route path='/' element={
+        <RequireAuth>
+          <Home/>
+        </RequireAuth>
+      }/>
+      <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<Login />} />
+    </Routes>
+  );
+}
