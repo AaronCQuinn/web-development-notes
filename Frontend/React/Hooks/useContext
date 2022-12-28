@@ -1,0 +1,33 @@
+The useContext hook is used to read and subcribe to state from any level of component within your application.
+
+Why is this useful?
+If you have a component multiple levels deep within your component tree this hook allows you to import state without having to pass state through components that may not necessarily make use of it. Also allows bypassing having multiple props for each component for the single use of just handing them down.
+Finally, eliminates the need for any prop drilling. Any component at any level can import the context and make use of it, making passing state back up the component tree a non-existent issue.
+
+To initiate a context:
+export const exampleContext = createContext(initialValue);
+
+The Provider is the portion of the context that must be imported to the portion of the app you would like to wrap in the context. This is what allows those components to access the state within it.
+The syntax to wrap the portion of your app is as follows:
+
+<ExampleContext.Provider>
+    *Components*
+</ExampleContext.Provider>
+
+Within the component which you want to access the context:
+You first import the useContext hook from react.
+
+import { useContext } from 'react';
+import exampleContext from './context/exampleContext';
+
+export function exampleContextProvider({ children }) {
+    const example = useContext(exampleContext);
+}
+
+The context provider then returns itself with the value prop. This prop then lists what the child components can access from inside the context.
+
+return (
+    <ExampleContext.Provider value={{props}}>
+        {children}
+    </ExampleContext.Provider>
+)
