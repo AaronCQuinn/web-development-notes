@@ -1,0 +1,31 @@
+Overlying guideline: If you're having trouble naming something, it probably means something needs to be restructured.
+
+1. Avoid Encodings:
+    Using a descriptor such as "List" for an array limits our ability to read code in a natural way.
+    Example:
+        unit.partList[42] would be better written as: unit.parts[42].
+
+2. Never Use / Expand Abbreviations:
+    Using a variable name such as "p" for parts forces users to subsconsciously track what each short abbreviation really means which can be combersome when multiple come into the picture. Expand the abbrevation to avoid this unneccesary strain.
+    Example:
+        const p = unit.parts[42] would be better written as: const part = unit.parts[42].
+
+3. Use Clear Distinctions:
+    Avoid using vague descriptors if possible.
+    Example:
+        const part = unit.parts[42] would be better written as: const wrench = workbench.parts[42].
+
+4. Replace Magic Values:
+    Avoid using comparitive clauses or indexing values in code without properly describing why the value is there, or being used. This clarifies their significance and can help keep things in sync if they're needed to be used elsewhere.
+    Example:
+        CONST WRENCH_INDEX = 42;
+        const wrench = workbench.parts[WRENCH_INDEX].
+
+5. Be Descriptive.
+    Strike a balance between describing what the code does, and being so verbose your code becomes information overload.
+    Example:
+        function grabWrenchFromWorkBench(workbench) {
+            CONST WRENCH_INDEX = 42;
+            const wrench = workbench.parts[WRENCH_INDEX];
+            return wrench;
+        }
